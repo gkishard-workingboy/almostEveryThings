@@ -54,8 +54,8 @@ namespace WindowsFormsApp1
             timer1.Start();
             if (pictureBox1.Left < 2560)
             {
-                pictureBox1.Top += 3;
-                pictureBox1.Left += 6;
+                pictureBox1.Top += 5;
+                pictureBox1.Left += 10;
             }else {
                 pictureBox1.Top = -217;
                 pictureBox1.Left = -394;
