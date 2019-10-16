@@ -12,6 +12,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form_Car : Form
     {
+        private int offset = 10;
         public Form_Car()
         {
             InitializeComponent();
@@ -54,8 +55,8 @@ namespace WindowsFormsApp1
             timer1.Start();
             if (pictureBox1.Left < 2560)
             {
-                pictureBox1.Top += 5;
-                pictureBox1.Left += 10;
+                pictureBox1.Top += offset / 2;
+                pictureBox1.Left += offset;
             }else {
                 pictureBox1.Top = -217;
                 pictureBox1.Left = -394;
@@ -68,6 +69,21 @@ namespace WindowsFormsApp1
         private void Form_Car_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e) //快速
+        {
+            offset = 20;
+        }
+
+        private void button2_Click(object sender, EventArgs e) //慢速
+        {
+            offset = 10;
+        }
+
+        private void button3_Click(object sender, EventArgs e) //停止
+        {
+            offset = 0;
         }
     }
 

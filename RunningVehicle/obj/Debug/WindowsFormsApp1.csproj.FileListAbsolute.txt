@@ -19,3 +19,13 @@ C:\Users\GK\Downloads\almostEveryThings\WindowsFormsApp1\obj\Debug\WindowsFormsA
 C:\Users\GK\Downloads\almostEveryThings\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
 C:\Users\GK\Downloads\almostEveryThings\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\GK\Downloads\almostEveryThings\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\GK\Documents\GitHub\almostEveryThings\RunningVehicle\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\GK\Documents\GitHub\almostEveryThings\RunningVehicle\obj\Debug\WindowsFormsApp1.Main_Form.resources
+C:\Users\GK\Documents\GitHub\almostEveryThings\RunningVehicle\obj\Debug\WindowsFormsApp1.Form_Car.resources
+C:\Users\GK\Documents\GitHub\almostEveryThings\RunningVehicle\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\GK\Documents\GitHub\almostEveryThings\RunningVehicle\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\GK\Documents\GitHub\almostEveryThings\RunningVehicle\obj\Debug\WindowsFormsApp1.exe
+C:\Users\GK\Documents\GitHub\almostEveryThings\RunningVehicle\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\GK\Documents\GitHub\almostEveryThings\RunningVehicle\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\GK\Documents\GitHub\almostEveryThings\RunningVehicle\bin\Debug\WindowsFormsApp1.exe
+C:\Users\GK\Documents\GitHub\almostEveryThings\RunningVehicle\bin\Debug\WindowsFormsApp1.pdb
