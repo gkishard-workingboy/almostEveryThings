@@ -6,18 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2997fef-7cb6-45be-af47-dae045473f18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/lib/javax.servlet.jsp.jstl.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/lib/jstl-impl.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FamilyFruitTime/.vs/FamilyFruitTime/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../FamilyFruitTime/.vs/FamilyFruitTime/v16/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FamilyFruitTime/.vs/FamilyFruitTime/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../FamilyFruitTime/.vs/FamilyFruitTime/v16/Server/sqlite3/storage.ide" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FamilyFruitTime/Form2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../FamilyFruitTime/Form2.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FamilyFruitTime/bin/Debug/FamilyFruitTime.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../FamilyFruitTime/bin/Debug/FamilyFruitTime.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FamilyFruitTime/bin/Debug/FamilyFruitTime.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FamilyFruitTime/bin/Debug/FamilyFruitTime.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FamilyFruitTime/obj/Debug/FamilyFruitTime.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../FamilyFruitTime/obj/Debug/FamilyFruitTime.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FamilyFruitTime/obj/Debug/FamilyFruitTime.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../FamilyFruitTime/obj/Debug/FamilyFruitTime.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FamilyFruitTime/obj/Debug/FamilyFruitTime.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../FamilyFruitTime/obj/Debug/FamilyFruitTime.pdb" afterDir="false" />
-    </list>
+    <list default="true" id="c2997fef-7cb6-45be-af47-dae045473f18" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,6 +71,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -97,41 +88,6 @@
             <path>
               <item name="FirstTaskOf_J2EE" type="b2602c69:ProjectViewProjectNode" />
               <item name="FirstTaskOf_J2EE" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FirstTaskOf_J2EE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FirstTaskOf_J2EE" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FirstTaskOf_J2EE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FirstTaskOf_J2EE" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstTaskOf_J2EE_war_exploded" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FirstTaskOf_J2EE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FirstTaskOf_J2EE" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstTaskOf_J2EE_war_exploded" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FirstTaskOf_J2EE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FirstTaskOf_J2EE" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="FirstTaskOf_J2EE_war_exploded" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FirstTaskOf_J2EE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FirstTaskOf_J2EE" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -140,12 +96,19 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="servlet" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="FirstTaskOf_J2EE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FirstTaskOf_J2EE" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FirstTaskOf_J2EE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,16 +258,17 @@
       <updated>1571126624811</updated>
       <workItem from="1571126633607" duration="15393000" />
       <workItem from="1571145726395" duration="7319000" />
+      <workItem from="1571311253917" duration="61000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22712000" />
+    <option name="totallyTimeSpent" value="22773000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12244898" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.124060154" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
