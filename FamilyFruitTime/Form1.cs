@@ -22,28 +22,30 @@ namespace FamilyFruitTime
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             form2.ShowDialog();
-            if (MessageBox.Show("你确认要退出程序吗", "最终确认", MessageBoxButtons.OKCancel).Equals(DialogResult.OK))
+            if (MessageBox.Show("你确认要退出程序吗\r\n点击是退出 点击否推出到托盘", "最终确认", MessageBoxButtons.YesNo).Equals(DialogResult.Yes))
             {
                 Application.Exit();
             }
             else
             {
-                form2.Close();
+                form2.WindowState = FormWindowState.Minimized;
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            this.ShowInTaskbar = false;
             form2 = new Form2();
             form2.ShowDialog();
-            if (MessageBox.Show("你确认要退出程序吗", "最终确认", MessageBoxButtons.OKCancel).Equals(DialogResult.OK))
+            DialogResult dialogResult = MessageBox.Show("你确认要退出程序吗\r\n点击是退出 点击否推出到托盘", "最终确认", MessageBoxButtons.YesNo);
+            if (dialogResult.Equals(DialogResult.Yes))
             {
                 Application.Exit();
+            }else {
+
+                form2.WindowState = FormWindowState.Minimized;
             }
-            else
-            {
-                form2.Close();
-            }
+            
         }
     }
 }
