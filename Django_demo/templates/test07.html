@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Create a time slider</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+.map-overlay {
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 25%;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.map-overlay .map-overlay-inner {
+    background-color: #fff;
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.20);
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.map-overlay h2 {
+    line-height: 24px;
+    display: block;
+    margin: 0 0 10px;
+}
+
+.map-overlay .legend .bar {
+    height: 10px;
+    width: 100%;
+    background: linear-gradient(to right, #FCA107, #7F3121);
+}
+
+.map-overlay input {
+    background-color: transparent;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    cursor: ew-resize;
+}
+#features {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    overflow: auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+}
+</style>
+
+<div id='map'></div>
+
+<div class='map-overlay top'>
+    <div class='map-overlay-inner'>
+        <h2>非洲猪瘟2018.8月-2019.4月</h2>
+        <label id='month'></label>
+        <input id='slider' type='range' min='0' max='8' step='1' value='0' />
+    </div>
+    <div class='map-overlay-inner'>
+        <div id='legend' class='legend'>
+            <div class='bar'></div>
+            <div>OIE公布的死亡和扑杀数（个）</div>
+        </div>
+    </div>
+</div>
+<pre id='features'></pre>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<!-- <script src='https://cdn.bootcss.com/d3/5.9.7/d3.min.js'></script> -->
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-language/v0.10.1/mapbox-gl-language.js'></script>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2luZHkwNzkiLCJhIjoiY2p5MW0yM2FmMDNhbzNpcnpoeGVqOXpmYSJ9.zKbdCDdA69t7b3zSWctaRw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v9',
+    center: [114.329577684, 30.58141017095],
+    zoom: 3
+});
+var language = new MapboxLanguage();
+map.addControl(language);
+var months = [
+    '2018年8月',
+    '2018年9月',
+    '2018年10月',
+    '2018年11月',
+    '2018年12月',
+    '2019年1月',
+    '2019年2月',
+    '2019年3月',
+    '2019年4月',
+]; 
+
+
+
+function filterBy(month) {
+    
+    var filters = ["<=", "month", month];
+    map.setFilter('earthquake-circles', filters);
+    map.setFilter('earthquake-labels', filters); 
+    
+    document.getElementById('month').textContent = months[month];
+    console.log("months[m]",filters,months[month])
+}
+
+
+// 格式化日期，如月、日、时、分、秒保证为2位数
+function formatNumber (n) {
+    n = n.toString()
+    return n[1] ? n : '0' + n;
+}
+// 参数number为毫秒时间戳，format为需要转换成的日期格式
+function formatTime (number, format) {
+    let time = new Date(number)
+    let newArr = []
+    let formatArr = ['Y', 'M', 'D']
+    newArr.push(time.getFullYear())
+    newArr.push(formatNumber(time.getMonth() + 1))
+    newArr.push(formatNumber(time.getDate()))
+
+    for (let i in newArr) {
+        format = format.replace(formatArr[i], newArr[i])
+    }
+    return format;
+}
+
+map.on('load', function() {
+
+    // Data courtesy of http://earthquake.usgs.gov/
+    // Query for significant earthquakes in 2015 URL request looked like this:
+    // http://earthquake.usgs.gov/fdsnws/event/1/query
+    //    ?format=geojson
+    //    &starttime=2015-01-01
+    //    &endtime=2015-12-31
+    //    &minmagnitude=6'
+    //
+    // Here we're using d3 to help us make the ajax request but you can use
+    // Any request method (library or otherwise) you wish.
+    //https://docs.mapbox.com/mapbox-gl-js/assets/significant-earthquakes-2015.geojson  hog_plague
+    d3.json('https://raw.githubusercontent.com/yuegreen/company/master/hog_plague.geojson', function(err, data) {
+        if (err) throw err;
+
+        // Create a month property value based on time
+        // used to filter against.
+        data.features = data.features.map(function(d) {
+          //  d.properties.month = new Date(d.properties.time*1000).getMonth();
+            var mm = new Date(d.properties.time*1000).getMonth();
+            if(mm <7) d.properties.month = mm + 4;
+            else d.properties.month = mm - 7;
+            
+            console.log("d.properties.month",d.properties.month);
+            return d;
+        });
+        console.log("data:",data);
+        map.addSource('earthquakes', {
+            'type': 'geojson',
+            data: data,
+          /*  cluster: true,
+            clusterMaxZoom: 14,
+            clusterRadius: 50  */
+        });
+
+        map.addLayer({
+            'id': 'earthquake-circles',
+            'type': 'circle',
+            'source': 'earthquakes',
+            'paint': {
+                'circle-color': [
+                    'interpolate',
+                    ['linear'],
+                    ['get', 'OIE'],
+                    0, "#F2F12D",
+                    5000, "#EED322",
+                    10000, "#E6B71E",
+                    15000, "#DA9C20",
+                    20000, "#CA8323",
+                    25000, "#B86B25",
+                    30000, "#A25626",
+                    35000, "#8B4225",
+                    40000, "#723122"
+            ],
+                'circle-opacity': 0.75,
+                'circle-radius': [
+                    'interpolate',
+                    ['linear'],
+                    ['get', 'OIE'],
+                    0, 8,
+                    5000, 10,
+                    10000, 12,
+                    15000, 14,
+                    20000, 16,
+                    25000, 18,
+                    30000, 20
+                ]
+            }
+        });
+
+        map.addLayer({
+            'id': 'earthquake-labels',
+            'type': 'symbol',
+            'source': 'earthquakes',
+            'layout': {
+                'text-field': "{OIE}",
+                'text-font': ['Open Sans Bold', 'Arial Unicode MS Bold'],
+                'text-size': 12
+            },
+            'paint': {
+                'text-color': 'rgba(0,0,0,0.5)'
+            }
+        });
+
+
+      /*  map.addLayer({
+            id: "clusters",
+            type: "circle",
+            source: "earthquakes",
+            filter: ["has","point_count"],
+            paint: {
+            // Use step expressions (https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-step)
+            // with three steps to implement three types of circles:
+            //   * Blue, 20px circles when point count is less than 100
+            //   * Yellow, 30px circles when point count is between 100 and 750
+            //   * Pink, 40px circles when point count is greater than or equal to 750
+            "circle-color": [
+                "step",
+                ["get", "point_count"],
+                "#51bbd6",
+                100,
+                "#f1f075",
+                750,
+                "#f28cb1"
+                ],
+                "circle-radius": [
+                    "step",
+                    ["get", "point_count"],
+                    20, 100,
+                    30, 750,
+                    40
+                ]
+            }
+
+        }) */
+        // Set filter to first month of the year
+        // 0 = 2018.8月
+        filterBy(0);
+
+        document.getElementById('slider').addEventListener('input', function(e) {
+            var month = parseInt(e.target.value, 10);
+            console.log("month:",month);
+            filterBy(month);
+        });
+
+        map.on('click', 'earthquake-circles', function (e) {
+            var features = map.queryRenderedFeatures(e.point);
+            document.getElementById('features').innerHTML = 
+                '<span style="padding-left:20px;">地点：</span>'+JSON.stringify(e.features[0].properties.place, null, 2)+'<br/>'+
+                '<span style="padding-left:20px;">确诊时间：</span>'+JSON.stringify(formatTime(e.features[0].properties.time*1000, 'Y-M-D'), null, 2)+'<br/>'+
+                '<span style="padding-left:20px;">发病猪场规模：</span>'+JSON.stringify(e.features[0].properties.scale, null, 2)+'<br/>'+
+                '<span style="padding-left:20px;">发病数：</span>'+JSON.stringify(e.features[0].properties.incidence, null, 2)+'<br/>'+
+                '<span style="padding-left:20px;">死亡数：</span>'+JSON.stringify(e.features[0].properties.mortality, null, 2)+'<br/>'+
+                '<span style="padding-left:20px;">IOE公布的死亡和扑杀数：</span>'+JSON.stringify(e.features[0].properties.OIE, null, 2)+'<br/>';
+          /*  new mapboxgl.Popup()
+                .setLngLat(e.lngLat)
+                .setHTML(e.features[0].properties.order)
+                .addTo(map); */
+        });
+
+        map.on('mouseenter', 'earthquake-labels', function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'earthquake-labels', function () {
+            map.getCanvas().style.cursor = '';
+        });
+
+        map.on('mouseenter', 'earthquake-circle', function () {
+            map.getCanvas().style.cursor = 'pointer';
+        });
+        
+        // Change it back to a pointer when it leaves.
+        map.on('mouseleave', 'earthquake-circle', function () {
+            map.getCanvas().style.cursor = '';
+        });
+    });
+});
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8' />
+<title>Draw GeoJSON points</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<style>
+body { margin:0; padding:0; }
+#map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+ 
+<div id='map'></div>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-language/v0.10.1/mapbox-gl-language.js'></script>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2luZHkwNzkiLCJhIjoiY2p5MW0yM2FmMDNhbzNpcnpoeGVqOXpmYSJ9.zKbdCDdA69t7b3zSWctaRw';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v9',
+    center: [114.329577684, 30.58141017095],
+    zoom: 3
+});
+
+var newmap = null;
+$(function(){
+
+    $.ajax({
+	    type : 'POST',
+	    contentType : 'application/json;charset=utf-8',
+	    url : "http://127.0.0.1:8000/geo/getJson",
+	   // dataType : 'json',
+        jsonp: 'jsoncallback',
+	    //data : {},
+	    success : function(data) {
+			console.log(data);
+			console.log(typeof data);
+
+	       newmap = JSON.parse(data);
+	       console.log(newmap);
+	    },
+	    error : function() {
+	        alert("数据导入错误");
+	    }
+	});
+});
+
+var language = new MapboxLanguage();
+map.addControl(language);
+map.addControl(new mapboxgl.NavigationControl());
+map.addControl(new mapboxgl.ScaleControl());
+map.on('load', function () {
+   
+    map.addLayer({
+        "id": "data-points",
+        "type": "circle",
+        "source": {
+            "type": "geojson",
+            "data": "newmap"
+        },
+        'paint': {
+            "circle-radius": 10,
+            "circle-color": "#007cbf"
+        }
+    });  
+});
+</script>
+ 
+</body>
+</html>
