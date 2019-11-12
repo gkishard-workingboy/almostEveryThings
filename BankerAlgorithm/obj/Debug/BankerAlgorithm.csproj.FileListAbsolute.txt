@@ -1,0 +1,9 @@
+C:\Users\GK\Documents\GitHub\BankerAlgorithm\bin\Debug\BankerAlgorithm.exe.config
+C:\Users\GK\Documents\GitHub\BankerAlgorithm\bin\Debug\BankerAlgorithm.exe
+C:\Users\GK\Documents\GitHub\BankerAlgorithm\bin\Debug\BankerAlgorithm.pdb
+C:\Users\GK\Documents\GitHub\BankerAlgorithm\obj\Debug\BankerAlgorithm.csprojAssemblyReference.cache
+C:\Users\GK\Documents\GitHub\BankerAlgorithm\obj\Debug\BankerAlgorithm.Form1.resources
+C:\Users\GK\Documents\GitHub\BankerAlgorithm\obj\Debug\BankerAlgorithm.Properties.Resources.resources
+C:\Users\GK\Documents\GitHub\BankerAlgorithm\obj\Debug\BankerAlgorithm.csproj.GenerateResource.cache
+C:\Users\GK\Documents\GitHub\BankerAlgorithm\obj\Debug\BankerAlgorithm.exe
+C:\Users\GK\Documents\GitHub\BankerAlgorithm\obj\Debug\BankerAlgorithm.pdb
