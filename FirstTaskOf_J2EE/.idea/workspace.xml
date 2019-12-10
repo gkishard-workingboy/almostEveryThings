@@ -6,7 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2997fef-7cb6-45be-af47-dae045473f18" name="Default Changelist" comment="" />
+    <list default="true" id="c2997fef-7cb6-45be-af47-dae045473f18" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../ProcessScheduling/.vs/ProcessScheduling/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessScheduling/.vs/ProcessScheduling/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProcessScheduling/.vs/ProcessScheduling/v16/Server/sqlite3/storage.ide" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessScheduling/.vs/ProcessScheduling/v16/Server/sqlite3/storage.ide" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProcessScheduling/bin/Debug/ProcessScheduling.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessScheduling/bin/Debug/ProcessScheduling.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProcessScheduling/bin/Debug/ProcessScheduling.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessScheduling/bin/Debug/ProcessScheduling.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProcessScheduling/obj/Debug/ProcessScheduling.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessScheduling/obj/Debug/ProcessScheduling.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProcessScheduling/obj/Debug/ProcessScheduling.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessScheduling/obj/Debug/ProcessScheduling.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProcessScheduling/obj/Debug/ProcessScheduling.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessScheduling/obj/Debug/ProcessScheduling.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProcessScheduling/obj/Debug/ProcessScheduling.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../ProcessScheduling/obj/Debug/ProcessScheduling.pdb" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -71,8 +80,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -109,13 +116,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571155757428" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/gk-servletPrac" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/goods/goods" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -259,16 +268,17 @@
       <workItem from="1571126633607" duration="15393000" />
       <workItem from="1571145726395" duration="7319000" />
       <workItem from="1571311253917" duration="61000" />
+      <workItem from="1574856089830" duration="409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22773000" />
+    <option name="totallyTimeSpent" value="23182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="22" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.124060154" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12567133" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
